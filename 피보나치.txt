@@ -1,0 +1,65 @@
+package rebron;
+
+import java.util.Scanner;
+import java.util.Stack;
+
+
+public class Main {
+    
+    public static void main(String[] args)   {
+
+		
+		Scanner sc = new Scanner(System.in);
+		Main fibo = new Main();
+		int N = sc.nextInt();
+		int z_count =0;
+		int o_count =0;
+		int [] arr = new int[N];
+		int [] arr2 = new int[N];
+		for(int i=0; i< N; i++) {
+				
+		 int k = sc.nextInt();
+		 
+		 if(fibo.fibonacci(k)==0) {
+			 
+			 z_count ++;
+		 }
+		 else if(fibo.fibonacci(k)==1) {
+			 o_count ++;
+			 
+		 }
+		 
+		 arr[i] = z_count;
+		 arr2[i] = o_count;
+		
+		}
+		
+		for(int i=0; i< N; i++) {
+			
+			System.out.println(arr[i] + " " + arr2[i]);
+			
+			
+		}
+		
+	
+	}
+	public int fibonacci( int n) {
+		
+		if( n == 0) {
+			
+			
+			return 0;
+		}
+		else if( n==1) {
+			
+			return 1;
+		}
+		else {
+			
+			return fibonacci(n-1) + fibonacci(n-2);
+		}
+		
+	}
+		
+}
+    
